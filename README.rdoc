@@ -1,6 +1,6 @@
-= Postmark rails gem
+= Postmark rails3 gem
 
-Postmark plug-in for ActionMailer
+Postmark plug-in for ActionMailer 3
 
 == Install
 
@@ -17,22 +17,18 @@ Then
   config/application.rb
 
 		config.action_mailer.delivery_method :postmark
-    config.action_mailer.postmark_settings.api_key = "your-api-key"
-
-Next, make postmark the delivery method for the production environment:
-
-  config/environments/production.rb
-
-    config.action_mailer.delivery_method = :postmark
+    config.action_mailer.postmark_settings = {:api_key => "your-api-key"}
 
 You may also tag messages, in order to track bounces more precisely.
 
     class TestMailer < ActionMailer::Base
       def tagged_message
-        subject    'hello'
-        recipients 'sheldon@bigbangtheory.com'
-        from       'leonard@bigbangtheory.com'
-        tag        'delivery'
+				mail(
+					:subject => 'hello', 
+					:to => 'sheldon@bigbangtheory.com', 
+					:from => 'leonard@bigbangtheory.com',
+					:tag => 'delivery'
+				)
       end
     end
 
@@ -55,4 +51,4 @@ You will also need postmark account, server and sender signature set up to use i
 
 == Copyright
 
-Copyright (c) 2009 Wildbit LLC. See LICENSE for details.
+Copyright (c) 2010 Randy Schmidt. See LICENSE for details.

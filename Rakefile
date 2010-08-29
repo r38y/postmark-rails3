@@ -4,12 +4,12 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "postmark-rails"
-    gem.summary = %Q{Postmark adapter for ActionMailer}
-    gem.description = %Q{Use this plugin in your rails applications to send emails through the Postmark API}
-    gem.email = "underlog@gmail.com"
+    gem.name = "postmark-rails3"
+    gem.summary = %Q{Postmark adapter for ActionMailer 3}
+    gem.description = %Q{Use this plugin in your rails 3 applications to send emails through the Postmark API}
+    gem.email = "randy@forge38.com"
     gem.homepage = "http://postmarkapp.com"
-    gem.authors = ["Petyo Ivanov"]
+    gem.authors = ["Randy Schmidt"]
     gem.add_development_dependency "rspec"
     # gem.add_dependency 'postmark'
 
