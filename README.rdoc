@@ -14,10 +14,15 @@ Then
 
 == Example
 
-  config/application.rb
+  config/application.rb or environment file
 
-		config.action_mailer.delivery_method :postmark
+		config.action_mailer.delivery_method = :postmark
     config.action_mailer.postmark_settings = {:api_key => "your-api-key"}
+
+	or in an initializer
+	
+		ActionMailer::Base.delivery_method = :postmark
+		ActionMailer::Base.postmark_settings = {:api_key => "your-api-key"}
 
 You may also tag messages, in order to track bounces more precisely.
 
