@@ -8,7 +8,6 @@ require 'spec'
 require 'spec/autorun'
 
 ActionMailer::Base.delivery_method = :postmark
-ActionMailer::Base.postmark_settings = {:api_key => 'mooo'}
 ActionMailer::Base.prepend_view_path File.join(File.dirname(__FILE__), "fixtures", "views")
 
 # require models

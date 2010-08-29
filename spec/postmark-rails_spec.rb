@@ -1,7 +1,14 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe "PostmarkRails3" do
-
+  it "should allow setting an api key" do
+    Postmark.stub!(:send_through_postmark)
+    ActionMailer::Base.postmark_settings = {:api_key => 'api-key'}
+    ActionMailer::Base.postmark_settings[:api_key].should == 'api-key'
+    Postmark.should_receive(:api_key=).with('api-key')
+    TestMailer.simple_message.deliver
+  end
+  
   it "should use postmark for delivery" do
     Postmark.should_receive(:send_through_postmark) do |message|
       message.subject.should == "hello"
