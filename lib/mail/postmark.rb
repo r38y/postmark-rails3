@@ -1,5 +1,5 @@
 module Mail
-  class Postmrk
+  class Postmark
     def initialize(values)
       self.settings = {:api_key => nil}.merge(values)
     end
